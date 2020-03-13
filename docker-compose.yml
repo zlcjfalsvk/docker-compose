@@ -1,0 +1,29 @@
+version: "3.7"
+services:
+
+  db:
+    image: mariadb:10.3.13
+    container_name: mariadb    
+    hostname: mariadb      
+    ports:
+      - 3306:3306         
+    environment: 
+      - MYSQL_ROOT_PASSWORD=비밀번호뭐냥
+      
+  redis:
+    image: redis:5.0.3
+    container_name: redis
+    hostname: redis
+    labels:
+      - "name=redis"
+      - "mode=standalone"
+    ports:
+        - 6379:6379
+    restart: always
+
+  # 브라우저에서 DB 접속할 수 있게 도와주는 Tool
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 8080:8080
