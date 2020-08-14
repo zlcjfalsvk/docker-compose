@@ -9,6 +9,7 @@ services:
       - 3306:3306         
     environment: 
       - MYSQL_ROOT_PASSWORD=cheolcheol!#@
+      - TZ=Asia/Seoul # 'UTC' + 09:00
     volumes:
       - /home/cheolmin/cheolcheol/mysql:/var/lib/mysql
       
